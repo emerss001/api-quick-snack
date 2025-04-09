@@ -1,0 +1,16 @@
+services:
+    postgresql:
+        image: bitnami/postgresql:latest
+        container_name: postgresql-api-quick-snack
+        environment:
+            - POSTGRESQL_USERNAME=admin
+            - POSTGRESQL_PASSWORD=adminpassword
+            - POSTGRESQL_DATABASE=mydatabase
+        ports:
+            - "5432:5432"
+        volumes:
+            - postgresql_data:/bitnami/postgresql
+
+volumes:
+    postgresql_data:
+        driver: local
