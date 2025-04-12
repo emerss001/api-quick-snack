@@ -3,8 +3,6 @@ import { z } from "zod";
 import { getProductsCategory } from "../services/get-products-category";
 
 export const getProductsByCategory: FastifyPluginAsyncZod = async (app) => {
-    console.log("🔁 Rota de produtos por categoria registrada");
-
     app.get(
         "/products/category/:category",
         {
